@@ -32,11 +32,12 @@ import { ref } from 'vue'
 import ContainerMain from './shared/ContainerMain.vue'
 import { computed } from 'vue'
 
-const menu = new URL('../assets/sprite.svg', import.meta.url).href
+const menuStart = new URL('../assets/sprite.svg#icon-menu', import.meta.url).href
+const menuCrose = new URL('../assets/sprite.svg#icon-cross', import.meta.url).href
 
 const menuShow = ref(false)
 
-const menuOrcrose = computed(() => menu + (!menuShow.value ? '#icon-menu' : '#icon-cross'))
+const menuOrcrose = computed(() => (!menuShow.value ? menuStart: menuCrose))
 
 const switchMenu = () => (menuShow.value = !menuShow.value)
 </script>
