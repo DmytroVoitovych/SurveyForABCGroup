@@ -2,62 +2,29 @@
 :root {
   --header-bg-black: #181818;
   --main-btn-bg-orange: #ffc700;
+  --test-btn-bg-white: #dadada;
   --extra-bg--whitedusk: #f3f3f2;
   --decor-bg-greyalfa: rgba(243, 243, 242, 0.8);
 
   --main-tx-clr-white: #ffffff;
   --accent-tx-clr-orange: #ffc700;
-  --extra-tx-clr-black:#272727;
-  --extra-tx-clr-darkblack:#181818;
+  --extra-tx-clr-black: #272727;
+  --extra-tx-clr-darkblack: #181818;
   --system-tx-clr-grey: rgba(255, 255, 255, 0.5);
   --accentmenu-tx-clr-orange: #f4ce0c;
-  
+
   --main-btn-clr-black: #0d0c11;
+  --test-btn-shadow: inset 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  --test-btn-clr-grey: #8e8e8e;
+  --prosgress-bg-grey: #f2f3f3;
+  --level-clr-green: #3bde7c;
+  --radio-bg-blue: #2950c2;
 
-  --main-txfont-ptserif: "PT Serif",serif;
-  --accent-txfont-yeseva:"Yeseva One",serif;
-  --extra-txfont-merriweather: "Merriweather", serif;
-  --system-txfont-roboto: "Roboto",sans-serif;
-  --button-txfont-merriweather: "Merriweather",serif;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  --main-txfont-ptserif: 'PT Serif', serif;
+  --accent-txfont-yeseva: 'Yeseva One', serif;
+  --extra-txfont-merriweather: 'Merriweather', serif;
+  --system-txfont-roboto: 'Roboto', sans-serif;
+  --button-txfont-merriweather: 'Merriweather', serif;
 }
 
 *,
@@ -68,12 +35,12 @@
   font-weight: normal;
 }
 
-html{
-scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-html:has([aria-expanded=true]){
-overflow-y: hidden;  
+html:has([aria-expanded='true']) {
+  overflow-y: hidden;
 }
 
 body {
@@ -102,9 +69,13 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .visually-hidden {
   position: absolute;
@@ -119,18 +90,39 @@ body {
   margin: -1px;
 }
 
+.buttonMain {
+  font-family: var(--button-txfont-merriweather);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--main-btn-clr-black);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--main-btn-bg-orange),
+    var(--main-btn-bg-orange) 21%
+  );
+  border-radius: 20px;
+  padding: 18px 14px 11px;
+  max-width: 200px;
+  width: 100%;
+}
 
-.buttonMain{
-font-family: var(--button-txfont-merriweather);
-font-weight: bold;
-font-size: 14px;
-line-height: 1.1;
-letter-spacing: 1.4px;
-text-transform: uppercase;
-color: var(--main-btn-clr-black);
-background-image: radial-gradient(circle at 50% 50%, var(--main-btn-bg-orange), var(--main-btn-bg-orange) 21%);
-border-radius: 20px;
-padding: 18px 14px 11px;
-max-width: 200px;
-width:100%;
+.buttonTest {
+  padding: 13px 17px 10px 17px;
+  border-radius: 20px;
+  box-shadow: var(--test-btn-shadow);
+  background-color: var(--test-btn-bg-white);
+  text-transform: uppercase;
+
+  font-family: var(--button-txfont-merriweather);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 1.4px;
+  text-align: center;
+  color: var(--test-btn-clr-grey);
+  max-width: 189px;
+  width: 100%;
 }

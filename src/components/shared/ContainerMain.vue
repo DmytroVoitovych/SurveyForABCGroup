@@ -4,15 +4,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style  scoped>
+<style scoped>
 .container {
-  max-width: 1280px;
+  max-width: 768px;
   padding: 0 15px;
-  
+  display: block;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) and (max-width: 1279.5px) {
     max-width: 768px;

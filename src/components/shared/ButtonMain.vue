@@ -1,11 +1,7 @@
 <template>
-    <button type="button">
+  <button type="button" start>
     <slot name="btntext"></slot>
-    </button>
+  </button>
 </template>
 
-<script setup>
-
-
-
-</script>
+<script setup></script>
